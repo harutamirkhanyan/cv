@@ -4,7 +4,6 @@
   border-radius: 5px;
   min-height: 300px;
   padding: 120px 25px 0;
-
   background: radial-gradient(#ffad6a 5%, transparent 5%) 0 0,
     radial-gradient(#ffad6a 5%, transparent 5%) 30px 90px,
     radial-gradient(#ffad6a 5%, transparent 5%) 60px 10px,
@@ -20,6 +19,10 @@
     width: 100%;
     height: fit-content;
     max-width: 150px;
+
+    @media (max-width: 768px) {
+      top: -55px;
+    }
   }
 
   &__img {

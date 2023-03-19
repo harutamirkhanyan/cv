@@ -1,7 +1,7 @@
 <template lang="pug">
 .cvSlider
   h2.cvSlider__title My portfolio
-  Carousel.cvSlider__carousel(:items-to-show="1" :wrap-around="true"  ref="myCarousel" autoplay=5000)
+  Carousel.cvSlider__carousel(:items-to-show="1" :wrap-around="true" :touchDrag="false"  ref="myCarousel")
     Slide.cvSlider__slide(v-for="item in slideInfo" :key="item.id")
       h3.cvSlider__slide {{item.title}}
       a.cvSlider__imgWrapper(:href='item.url' target='_blank')
@@ -35,31 +35,25 @@ export default {
         img: visual,
         title: 'Visual',
         url: 'https://harutamirkhanyan.github.io/Visual/',
-        description:
-          'Vitae sapien pellentesque habitant morbi nunc. Viverra aliquet  porttitor rhoncus libero justo laoreet sit amet vitae.',
+
       },
       {
         id: 2,
         img: onlineBank,
         description: 'Online bank',
         url: 'https://harutamirkhanyan.github.io/vue-online-bank/',
-        text: 'Vitae sapien pellentesque habitant morbi nunc. Viverra aliquet  porttitor rhoncus libero justo laoreet sit amet vitae.',
       },
       {
         id: 3,
         img: conduit,
         title: 'Medium clone of https://demo.realworld.io/#/',
-        ulr: 'https://harutamirkhanyan.github.io/conduit/#/',
-        description:
-          'Vitae sapien pellentesque habitant morbi nunc. Viverra aliquet  porttitor rhoncus libero justo laoreet sit amet vitae.',
+        url: 'https://harutamirkhanyan.github.io/conduit/#/',
       },
       {
         id: 4,
         img: hydra,
         title: 'OUTDOOR',
         url: 'https://harutamirkhanyan.github.io/hydra/',
-        description:
-          'Vitae sapien pellentesque habitant morbi nunc. Viverra aliquet  porttitor rhoncus libero justo laoreet sit amet vitae.',
       },
     ]);
     return {
