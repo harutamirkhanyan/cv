@@ -1,0 +1,81 @@
+@import '@/assets/scss/_mixins';
+
+.cvInfo {
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  width: 100%;
+
+  &__line {
+    height: 3px;
+    background-color: #ff7707;
+    border: none;
+    margin: 25px 0;
+  }
+
+  &__title {
+    @include textStyle($fw: 700, $fsz: 25px, $lht: 30px, $color: #202b6a);
+    padding: 0 0 15px;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+  }
+
+  &__date {
+    @include textStyle($fw: 700, $fsz: 15px, $lht: 30px, $color: black);
+  }
+
+  &__companiInfo {
+    display: flex;
+    align-items: center;
+    padding: 0 0 0 10px;
+    gap: 10px;
+  }
+
+  &__companyName {
+    @include textStyle($fw: 700, $fsz: 18px, $lht: 25px, $color: #5C659C);
+  }
+
+  &__position{
+    @include textStyle($fw: 400, $fsz: 17px, $lht: 25px, $color: black);
+  }
+
+  &__responsibility{
+    margin: 0;
+    padding: 0;
+  }
+
+  &__responsibilityText{
+    @include textStyle($fw: 400, $fsz: 16px, $lht: 25px, $color: black);
+    padding: 0 0 0 30px;
+    list-style: none;
+  }
+
+  &__skils{
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+    list-style: none;
+  }
+
+  &__skilItem{
+    @include textStyle($fw: 400, $fsz: 16px, $lht: 25px, $color: black);
+    padding: 0 0 0 20px;
+  }
+
+  &__text{
+    @include textStyle($fw: 400, $fsz: 16px, $lht: 25px, $color: black);
+
+    &--darkBlue{
+      color: #5C659C;
+    }
+
+    &--margin{
+      margin: 0 5px 0 5px;
+    }
+
+  }
+}
