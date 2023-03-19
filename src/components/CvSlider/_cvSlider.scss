@@ -1,0 +1,86 @@
+@import '@/assets/scss/_mixins';
+
+.cvSlider {
+  padding: 0 50px 25px;
+  background: radial-gradient(
+    50% 2900.76% at 50% 53.89%,
+    rgba(82, 73, 123, 0.95) 0,
+    #2d2940 100%
+  );
+
+  &__title {
+    text-align: center;
+    color: #fff;
+    padding: 0 0 10px;
+  }
+
+  &__slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__imgWrapper {
+    width: 100%;
+    height: fit-content;
+    max-width: 700px;
+
+    @media (max-width: 1024px) {
+      max-width: 600px;
+    }
+
+    @media (max-width: 768px) {
+      max-width: 300px;
+    }
+  }
+
+  &__img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .carousel__slide {
+    position: relative;
+  }
+
+  .carousel__viewport {
+    position: relative;
+    z-index: 10;
+  }
+
+  &__btnsWrapper {
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__prev,
+  &__next {
+    background: unset;
+    border: unset;
+    cursor: pointer;
+  }
+
+  &__prev {
+    @include slideBtn(url('@/assets/img/iconPrev.svg'));
+    left: -32px;
+  }
+
+  &__next {
+    @include slideBtn(url('@/assets/img/iconNext.svg'));
+    right: -32px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 0 35px 15px;
+  }
+}

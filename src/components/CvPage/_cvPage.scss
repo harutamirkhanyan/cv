@@ -1,13 +1,29 @@
+@import '@/assets/scss/_mixins';
+
 .cvPage {
   display: flex;
   flex-direction: column;
+
+  &__content {
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    @include textStyle($fw: 700, $fsz: 40px, $lht: 30px, $color: #ff7707);
+
+    @media (max-width: 1024px) {
+      font-size: 30px;
+      padding: 0 50px 0 0;
+    }
+  }
 
   &__header {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 150px;
-    // background: rgb(2, 0, 36);
     background: linear-gradient(
       90deg,
       rgba(2, 0, 36, 1) 0%,
@@ -16,11 +32,15 @@
     );
   }
 
-  &__content{
+  &__content {
     display: flex;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
   }
 
-  &__textContent{
+  &__textContent {
     width: 75%;
   }
 }

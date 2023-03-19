@@ -1,5 +1,5 @@
 <template lang="pug">
-navbar.cvNavbar
+.cvNavbar
   .cvNavbar__imgWrapper
       img.cvNavbar__img(:src='logo'  loading='lazy' alt='logo')
   h2.cvNavbar__title {{aboutTitle}}

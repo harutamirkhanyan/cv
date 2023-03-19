@@ -5,15 +5,18 @@
   .cvPage__content
     CvInfo
     CvNavbar
+  CvSlider
 </template>
 
 <script lang="js">
 import CvNavbar from '@/components/CvNavbar/CvNavbar.vue';
 import CvInfo from '@/components/CvInfo/CvInfo.vue';
+import CvSlider from '@/components/CvSlider/CvSlider.vue'
+
 
 export default {
   name: 'CvPage',
-  components: { CvNavbar, CvInfo },
+  components: { CvNavbar, CvInfo, CvSlider },
   props: {},
 };
 </script>

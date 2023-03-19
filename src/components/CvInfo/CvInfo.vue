@@ -5,7 +5,7 @@
   .cvInfo__infoWrapper
     .cvInfo__info(v-for='item in workPlace' :key='item.id')
       span.cvInfo__date {{item.date}}
-      p.cvInfo__companiInfo
+      p.cvInfo__companyInfo
         a.cvInfo__companyName(:href='item.url' target='_blank') {{item.companyName}} 
         span.cvInfo__position {{item.position}}
       ul.cvInfo__skils(v-if='item.responsibility')
