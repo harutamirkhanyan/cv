@@ -1,0 +1,141 @@
+@import '@/assets/scss/_mixins';
+
+.cvInfo {
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  width: 100%;
+
+  &__line {
+    height: 3px;
+    background-color: #ff7707;
+    border: none;
+    margin: 25px 0;
+
+    @media (max-width: 768px) {
+      margin: 15px 0;
+    }
+  }
+
+  &__title {
+    @include textStyle($fw: 700, $fsz: 25px, $lht: 30px, $color: #202b6a);
+    padding: 0 0 15px;
+
+    
+    @media (max-width: 1024px) {
+      font-size: 23px;
+      line-height: 27px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+  }
+
+  &__date {
+    @include textStyle($fw: 700, $fsz: 15px, $lht: 30px, $color: black);
+
+    @media (max-width: 1024px) {
+      padding: 0 0 0 5px;
+      font-size: 14px;
+      line-height: 25px;
+    }
+  }
+
+  &__companyInfo {
+    display: flex;
+    align-items: center;
+    padding: 0 0 0 10px;
+    gap: 10px;
+
+    @media (max-width: 1024px) {
+      padding: 0 0 0 5px;
+    }
+
+    @media (max-width: 1024px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__companyName {
+    @include textStyle($fw: 700, $fsz: 18px, $lht: 25px, $color: #5c659c);
+
+    @media (max-width: 1024px) {
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+
+  &__position {
+    @include textStyle($fw: 400, $fsz: 17px, $lht: 25px, $color: black);
+
+    @media (max-width: 1024px) {
+      font-size: 15px;
+      line-height: 18px;
+    }
+  }
+
+  &__responsibility {
+    margin: 0;
+    padding: 0;
+  }
+
+  &__responsibilityText {
+    @include textStyle($fw: 400, $fsz: 16px, $lht: 25px, $color: black);
+    padding: 0 0 0 30px;
+    list-style: none;
+
+    @media (max-width: 1024px) {
+      padding: 0 0 0 10px;
+      font-size: 14px;
+      line-height: 17px;
+    }
+  }
+
+  &__skils {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+    list-style: none;
+  }
+
+  &__skilItem {
+    @include textStyle($fw: 400, $fsz: 16px, $lht: 25px, $color: black);
+    padding: 0 0 0 20px;
+
+    @media (max-width: 1024px) {
+      font-size: 14px;
+      line-height: 17px;
+    }
+  }
+
+  &__text {
+    @include textStyle($fw: 400, $fsz: 16px, $lht: 25px, $color: black);
+    display: inline-block;
+
+    &--darkBlue {
+      color: #5c659c;
+    }
+
+    &--margin {
+      margin: 0 5px 0 5px;
+    }
+
+    @media (max-width: 1024px) {
+      font-size: 14px;
+      line-height: 17px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    padding: 15px;
+  }
+
+  @media (max-width: 768px) {
+    order: 2;
+    padding: 15px;
+  }
+}
