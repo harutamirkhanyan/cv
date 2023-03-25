@@ -1,0 +1,17 @@
+@import '@/assets/scss/_mixins';
+
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1240px;
+  gap: 20px;
+  background: #F6F6F6;
+  text-align: center;
+  padding: 50px;
+  width: 100%;
+
+}

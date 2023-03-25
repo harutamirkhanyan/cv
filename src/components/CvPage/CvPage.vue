@@ -1,23 +1,24 @@
 <template lang="pug">
 .cvPage
-  header.cvPage__header
-    h1.cvPage__title Harutyun Amirkhanyan
-  .cvPage__content
-    CvInfo
-    CvNavbar
+  CvHeader
+  CvAbout
+  CvSkills
   CvSlider
+  CvContacts
+  .cvPage__content
 </template>
 
 <script lang="js">
+import CvHeader from '@/components/CvHeader/CvHeader.vue';
 import CvNavbar from '@/components/CvNavbar/CvNavbar.vue';
-import CvInfo from '@/components/CvInfo/CvInfo.vue';
+import CvAbout from '@/components/CvAbout/CvAbout.vue';
+import CvSkills from '@/components/CvSkills/CvSkills.vue'
 import CvSlider from '@/components/CvSlider/CvSlider.vue'
-
+import CvContacts from '@/components/CvContacts/CvContacts.vue'
 
 export default {
   name: 'CvPage',
-  components: { CvNavbar, CvInfo, CvSlider },
-  props: {},
+  components: { CvNavbar, CvAbout, CvSkills,CvSlider, CvHeader, CvContacts },
 };
 </script>
 

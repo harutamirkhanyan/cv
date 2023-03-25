@@ -1,5 +1,55 @@
 @import '@/assets/scss/_mixins';
 
 .cvHeaderNav {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  min-height: 70px;
+  width: 100%;
+  z-index: 15;
+  background: linear-gradient(45deg, rgb(0, 0, 0), rgb(82, 172, 182) 100%);
 
+  &__container{
+  display: flex;
+  flex-grow: 2;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1240px;
+  }
+
+  &__menu {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    width: 100%;
+  }
+
+  &__item {
+    font-size: 20px;
+    font-weight: 700;
+    list-style: none;
+  }
+
+  &__line{
+    position: relative;
+    display: block;
+    bottom: -4px;
+    height: 4px;
+    background-color: #4b6ddb;
+  }
+
+  &__scrollLine {
+    position: absolute;
+    width: 0;
+    height: 100%;
+    background-color: #ff0000;
+    transition: all ease-in-out 0.3s;
+  }
 }

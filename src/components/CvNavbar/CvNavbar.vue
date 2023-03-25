@@ -14,7 +14,6 @@
 
 <script>
 import { ref } from 'vue';
-import logo from '@/assets/img/Harut.jpg'
 import phone from '@/assets/img/phone.png';
 import mail from '@/assets/img/mail.png';
 import telegram from '@/assets/img/telegram.png';
@@ -70,7 +69,6 @@ export default {
 
     return {
       contacts,
-      logo,
       phone,
       mail,
       telegram,

@@ -14,6 +14,13 @@
     padding: 0 0 10px;
   }
 
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+  }
+
   &__slide {
     display: flex;
     flex-direction: column;
@@ -24,8 +31,29 @@
   &__imgWrapper {
     width: 100%;
     height: fit-content;
-    max-width: 700px;
+    max-height: 500px;
+    overflow: hidden;
+    max-width: 1024px;
     cursor: pointer;
+    transition: transform ease-in-out 0.3s;
+
+    &:hover {
+      transform: scale(1.03);
+      overflow-y: scroll;
+    }
+
+    /* Цвет дорожки прокрутки и ползунка */
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #b789b0;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #9b99bf;
+    }
 
     @media (max-width: 1024px) {
       max-width: 600px;
@@ -42,8 +70,8 @@
 
   &__img {
     width: 100%;
-    height: 100%;
-    object-fit: contain;
+    height: auto;
+    object-fit: cover;
   }
 
   .carousel__slide {
