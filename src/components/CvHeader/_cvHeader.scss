@@ -1,0 +1,169 @@
+@import '@/assets/scss/_mixins';
+
+.cvHeader {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 900px;
+  background: url('@/assets/img/bgImage.png') no-repeat;
+  background-size: cover;
+
+  &__wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  &__hello {
+    .terminal {
+      font-size: 30px;
+
+      @media (max-width: 768px) {
+        font-size: 25px;
+      }
+
+      @media (max-width: 484px) {
+        font-size: 16px;
+      }
+    }
+  }
+
+  &__title {
+    .terminal {
+      min-height: 50px;
+      font-size: 40px;
+      color: black;
+
+      @media (max-width: 768px) {
+        font-size: 25px;
+      }
+    }
+  }
+
+  &__btns {
+    display: flex;
+    gap: 15px;
+  }
+
+  &__cv {
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    color: #fff;
+    font-size: 24px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: sans-serif;
+    box-sizing: border-box;
+    background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+    background-size: 400%;
+    border-radius: 30px;
+    z-index: 1;
+
+    &:hover {
+      animation: animate 8s linear infinite;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      bottom: -5px;
+      left: -5px;
+      z-index: -1;
+      background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+      background-size: 400%;
+      border-radius: 40px;
+      opacity: 0;
+      transition: 0.5s;
+    }
+
+    &:hover:before {
+      filter: blur(20px);
+      opacity: 1;
+      animation: animate 8s linear infinite;
+    }
+
+    @media (max-width: 484px) {
+      width: 120px;
+      font-size: 15px;
+    }
+  }
+  @keyframes animate {
+    0% {
+      background-position: 0%;
+    }
+    100% {
+      background-position: 400%;
+    }
+  }
+}
+
+.effect.effect-4 {
+  transition: all 0.2s linear 0s;
+
+  &:before {
+    content: '';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    background: url('@/assets/img/mailMini.png') no-repeat center;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    font-size: 30px;
+    transform: scale(0, 1);
+    transition: all 0.2s linear 0s;
+
+    &:hover {
+      transform: scale(1, 1);
+      text-indent: 0;
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  &:hover {
+    text-indent: -9999px;
+
+    &:before {
+      transform: scale(1, 1) translate(-50%, -50%);
+      text-indent: 0;
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
+
+.effect {
+  text-align: center;
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  color: #541388;
+  text-transform: capitalize;
+  font-size: 24px;
+  padding: 20px 0px;
+  width: 200px;
+  border-radius: 30px;
+  overflow: hidden;
+
+  @media (max-width: 484px) {
+    width: 120px;
+    font-size: 15px;
+  }
+}
