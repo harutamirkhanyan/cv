@@ -1,6 +1,7 @@
 @import '@/assets/scss/_mixins';
 
 .cvHeader {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9,12 +10,41 @@
   background-size: cover;
 
   &__wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 460px 0 0;
     gap: 15px;
+  }
+
+  &__hello {
+    .terminal {
+      font-size: 30px;
+
+      @media (max-width: 768px) {
+        font-size: 25px;
+      }
+
+      @media (max-width: 484px) {
+        font-size: 16px;
+      }
+    }
+  }
+
+  &__title {
+    .terminal {
+      min-height: 50px;
+      font-size: 40px;
+      color: black;
+
+      @media (max-width: 768px) {
+        font-size: 25px;
+      }
+    }
   }
 
   &__btns {
@@ -64,6 +94,11 @@
       opacity: 1;
       animation: animate 8s linear infinite;
     }
+
+    @media (max-width: 484px) {
+      width: 120px;
+      font-size: 15px;
+    }
   }
   @keyframes animate {
     0% {
@@ -79,7 +114,7 @@
   transition: all 0.2s linear 0s;
 
   &:before {
-    content: "";
+    content: '';
     display: flex;
     align-items: center;
     justify-content: center;
@@ -94,7 +129,7 @@
     transform: scale(0, 1);
     transition: all 0.2s linear 0s;
 
-    &:hover{
+    &:hover {
       transform: scale(1, 1);
       text-indent: 0;
       width: 30px;
@@ -121,12 +156,14 @@
   text-decoration: none;
   color: #541388;
   text-transform: capitalize;
-  font: {
-    family: 'Roboto', sans-serif;
-    size: 18px;
-  }
+  font-size: 24px;
   padding: 20px 0px;
-  width: 150px;
-  border-radius: 10px;
+  width: 200px;
+  border-radius: 30px;
   overflow: hidden;
+
+  @media (max-width: 484px) {
+    width: 120px;
+    font-size: 15px;
+  }
 }

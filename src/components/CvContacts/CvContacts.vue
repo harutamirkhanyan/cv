@@ -3,21 +3,23 @@
   h3.cvContacts__title CONTACT ME
   .cvContacts__container
     form.cvContacts__form
-      p.cvContacts__wrapper.cvContacts__wrapperOne
-        input.cvContacts__email(type='text'  id='name' placeholder='First Name')
-        input.cvContacts__name(type='email'  id='Email' placeholder='Mail')
       p.cvContacts__wrapper
-        input.cvContacts__phone(type='text'  id='phone' placeholder='Phone')
+        input.cvContacts__input(type='text'  id='name' placeholder='First Name')
+        input.cvContacts__input(type='email'  id='email' placeholder='Email')
       p.cvContacts__wrapper
-        textarea.cvContacts__addText( id='message' placeholder='Tell Us Something...' )
+        input.cvContacts__input(type='text'  id='phone' placeholder='Phone')
+      p.cvContacts__wrapper
+        textarea.cvContacts__addText( id='message' placeholder='Tell Me Something...' )
       button.cvContacts__submit(type='submit') SEND MESSAGE
     .cvContacts__contacts
-      .cvContacts__name Harutyun AMirkhanyan
-      span Front-End Developer
-      span Tel:
-      span +374 (77) 166 744
-      span Email:
-      span har.amirkhanyan@gmail.com
+      .cvContacts__name Harutyun Amirkhanyan
+      span.cvContacts__proff Front-End Developer
+      .cvContacts__block
+        span.cvContacts__desc Tel:
+        span.cvContacts__info +374 (77) 166 744
+      .cvContacts__block
+        span.cvContacts__desc Email:
+        span.cvContacts__info har.amirkhanyan@gmail.com
       .cvContacts__contactsBlock
         a.cvContacts__contactsWrapper(v-for="item in contacts" :key="item.id" :title='item.title' :href='item.href' target='_blank') 
           img.cvContacts__img(:src='item.img'  loading='lazy' :alt='item.alt')
@@ -34,7 +36,7 @@ import facebook from '@/assets/img/facebook.png';
 export default {
   name: 'CvInfo',
   setup() {
-  const contacts = ref([
+    const contacts = ref([
       // {
       //   id: 1,
       //   img: phone,
@@ -79,13 +81,13 @@ export default {
       },
     ]);
     return {
-       contacts,
+      contacts,
       phone,
       mail,
       telegram,
       linkedin,
       github,
-      facebook
+      facebook,
     };
   },
 };

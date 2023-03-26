@@ -1,17 +1,17 @@
 @import '@/assets/scss/_mixins';
 
 .cvSlider {
-  padding: 0 50px 25px;
+  padding: 50px;
   background: radial-gradient(
     50% 2900.76% at 50% 53.89%,
-    rgba(82, 73, 123, 0.95) 0,
+    rgba(73, 123, 111, 0.95) 0,
     #2d2940 100%
   );
 
   &__title {
     text-align: center;
     color: #fff;
-    padding: 0 0 10px;
+    padding: 0 0 30px;
   }
 
   &__content {
@@ -59,13 +59,6 @@
       max-width: 600px;
     }
 
-    @media (max-width: 768px) {
-      max-width: 320px;
-    }
-
-    @media (max-width: 484px) {
-      max-width: 240px;
-    }
   }
 
   &__img {
