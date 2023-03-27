@@ -6,7 +6,7 @@
   flex-direction: column;
   align-items: center;
   min-height: 900px;
-  background: url('@/assets/img/bgImage.png') no-repeat;
+  background: url('@/assets/img/bgImage.png') no-repeat center;
   background-size: cover;
 
   &__wrapper {
@@ -56,7 +56,6 @@
     position: relative;
     display: inline-block;
     width: 200px;
-    height: 60px;
     text-align: center;
     line-height: 60px;
     color: #fff;
@@ -100,6 +99,12 @@
       font-size: 15px;
     }
   }
+
+  &__mail{
+    width: fit-content;
+    height: fit-content;
+  }
+
   @keyframes animate {
     0% {
       background-position: 0%;
@@ -151,16 +156,19 @@
 
 .effect {
   text-align: center;
-  display: inline-block;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
   text-decoration: none;
+  background-color: #EFEFEF;
   color: #541388;
   text-transform: capitalize;
   font-size: 24px;
-  padding: 20px 0px;
   width: 200px;
   border-radius: 30px;
   overflow: hidden;
+  border: 1px solid black;
 
   @media (max-width: 484px) {
     width: 120px;

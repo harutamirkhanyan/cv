@@ -5,14 +5,14 @@
       .cvHeaderNav__terminal
         h1.cvHeaderNav__name {{name}}
       ul.cvHeaderNav__menu
-        li.cvHeaderNav__item(v-for="item in nav" :key="item.id") {{item.text}}
+        li.cvHeaderNav__item(v-for="item in nav" :key="item.id" @click="$scrollTo('.'+item.id)") {{item.text}}
       .cvHeaderNav__imgWrapper(@click.prevent="openSidebar")
         img.cvHeaderNav__img(:src='burgerLogo' alt='burger' loading='lazy')
   span.cvHeaderNav__line
     span.cvHeaderNav__scrollLine
   CvSidebar
     ul.cvHeaderNav__menuSidebar
-      li.cvHeaderNav__itemSidebar(v-for="item in nav" :key="item.id") {{item.text}}
+      li.cvHeaderNav__itemSidebar(v-for="item in nav" :key="item.id" @click="$scrollTo('.'+item.id)") {{item.text}}
 
 </template>
 
@@ -27,13 +27,13 @@ export default {
   setup() {
     const name = ref('Harutyun');
     const nav = ref([
-      { id: 'home', text: 'Home' },
-      { id: 'aboutMe', text: 'About me' },
+      { id: 'cvHeader', text: 'Home' },
+      { id: 'about', text: 'About me' },
       // { id: 'experience', text: 'Experience' },
       // { id: 'education', text: 'Education' },
       { id: 'skills', text: 'Skills' },
-      { id: 'portfolio', text: 'Portfolio' },
-      { id: 'contacts', text: 'Contacts' },
+      { id: 'cvSlider', text: 'Portfolio' },
+      { id: 'cvContacts', text: 'Contacts' },
     ]);
 
     const line = () => {

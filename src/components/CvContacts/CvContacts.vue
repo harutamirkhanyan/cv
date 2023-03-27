@@ -2,14 +2,14 @@
 .cvContacts
   h3.cvContacts__title CONTACT ME
   .cvContacts__container
-    form.cvContacts__form
+    form.cvContacts__form(@submit.prevent="onSubmit")
       p.cvContacts__wrapper
-        input.cvContacts__input(type='text'  id='name' placeholder='First Name')
-        input.cvContacts__input(type='email'  id='email' placeholder='Email')
+        input.cvContacts__input(type='text'  id='name' placeholder='First Name' v-model='name')
+        input.cvContacts__input(type='email'  id='email' placeholder='Email' v-model='email')
       p.cvContacts__wrapper
-        input.cvContacts__input(type='text'  id='phone' placeholder='Phone')
+        input.cvContacts__input(type='text'  id='phone' placeholder='Phone' v-model='phone')
       p.cvContacts__wrapper
-        textarea.cvContacts__addText( id='message' placeholder='Tell Me Something...' )
+        textarea.cvContacts__addText( id='message' placeholder='Tell Me Something...'  v-model='message')
       button.cvContacts__submit(type='submit') SEND MESSAGE
     .cvContacts__contacts
       .cvContacts__name Harutyun Amirkhanyan
@@ -27,12 +27,12 @@
 
 <script>
 import { ref } from 'vue';
-import phone from '@/assets/img/phone.png';
-import mail from '@/assets/img/mail.png';
-import telegram from '@/assets/img/telegram.png';
-import linkedin from '@/assets/img/linkedin.png';
-import github from '@/assets/img/gitHub.png';
-import facebook from '@/assets/img/facebook.png';
+import phoneLogo from '@/assets/img/phone.png';
+import mailLogo from '@/assets/img/mail.png';
+import telegramLogo from '@/assets/img/telegram.png';
+import linkedinLogo from '@/assets/img/linkedin.png';
+import githubLogo from '@/assets/img/gitHub.png';
+import facebookLogo from '@/assets/img/facebook.png';
 export default {
   name: 'CvInfo',
   setup() {
@@ -53,41 +53,55 @@ export default {
       // },
       {
         id: 3,
-        img: telegram,
+        img: telegramLogo,
         href: 'https://t.me/harutyun_a',
         title: 'Send message',
         alt: 'telegram',
       },
       {
         id: 4,
-        img: linkedin,
+        img: linkedinLogo,
         href: 'https://www.linkedin.com/in/harut-amirkhanyan/',
         title: 'Linkedin page',
         alt: 'linkedin',
       },
       {
         id: 5,
-        img: github,
+        img: githubLogo,
         href: 'https://github.com/harutamirkhanyan',
         title: 'GitHub page',
         alt: 'github',
       },
       {
         id: 5,
-        img: facebook,
+        img: facebookLogo,
         href: 'https://www.facebook.com/amirkhanyan.harut',
         title: 'Facebook page',
         alt: 'facebook',
       },
     ]);
+
+    onsubmit = () => {
+      // sendFormToTelegram();
+    };
+
+    const name = ref('');
+    const email = ref('');
+    const phone = ref('');
+    const message = ref('');
+
     return {
       contacts,
+      phoneLogo,
+      mailLogo,
+      telegramLogo,
+      linkedinLogo,
+      githubLogo,
+      facebookLogo,
+      name,
+      email,
       phone,
-      mail,
-      telegram,
-      linkedin,
-      github,
-      facebook,
+      message,
     };
   },
 };
