@@ -33,6 +33,8 @@ import telegramLogo from '@/assets/img/telegram.png';
 import linkedinLogo from '@/assets/img/linkedin.png';
 import githubLogo from '@/assets/img/gitHub.png';
 import facebookLogo from '@/assets/img/facebook.png';
+import emailjs from '@emailjs/browser';
+
 export default {
   name: 'CvInfo',
   setup() {
@@ -82,7 +84,7 @@ export default {
     ]);
 
     onsubmit = () => {
-      // sendFormToTelegram();
+      sendEmail();
     };
 
     const name = ref('');
@@ -90,6 +92,29 @@ export default {
     const phone = ref('');
     const message = ref('');
 
+    const sendEmail = () => {
+      const form = ref({
+        name: name.value,
+        email: email.value,
+        phone: phone.value,
+        message: message.value,
+      });
+      emailjs
+        .send(
+          'service_ydp2imy',
+          'template_m7qyhgt',
+          form.value,
+          'EqfAb7ONTlBib2ewP'
+        )
+        .then(
+          (response) => {
+            return response;
+          },
+          (error) => {
+            return error;
+          }
+        );
+    };
     return {
       contacts,
       phoneLogo,
@@ -102,6 +127,7 @@ export default {
       email,
       phone,
       message,
+      sendEmail,
     };
   },
 };
