@@ -103,6 +103,7 @@
     font-size: 18px;
     border: none;
     border-radius: 7px;
+    cursor: pointer;
   }
 
   &__contacts {
@@ -135,6 +136,11 @@
     width: 100%;
     height: fit-content;
     max-width: 30px;
+    transition: all ease-in-out 0.3s;
+    
+    &:hover{
+    transform: scale(1.1);
+    }
   }
 
   &__img {
