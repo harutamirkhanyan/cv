@@ -1,4 +1,6 @@
 import { createStore } from 'vuex'
+import { useSubmitForm } from '@/store/modules/submitForm';
+
 
 export default createStore({
   state: {
@@ -12,5 +14,10 @@ export default createStore({
       state.sidebar = false
     }
   },
+  actions: {
+  },
+  modules: {
+    useSubmitForm,
+  }
 
 })

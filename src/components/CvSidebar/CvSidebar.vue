@@ -7,16 +7,42 @@
 </template>
 
 <script>
-import { computed } from '@vue/runtime-core';
+import {  computed, onMounted, onUnmounted } from '@vue/runtime-core';
 import { useStore } from 'vuex';
 export default {
   setup() {
     const store = useStore();
     const sidebar = computed(() => store.state.sidebar);
+    const closeSidebar = () => store.commit('closeSidebar');
+
+
+    const handleOutsideClick = (event) => {
+      const sidebarEl = document.querySelector('.sidebar');
+      const openButton = document.querySelector('.cvHeaderNav__imgWrapper');
+
+      if (
+        sidebar.value &&
+        sidebarEl &&
+        !sidebarEl.contains(event.target) &&
+        openButton &&
+        !openButton.contains(event.target)
+      ) {
+        closeSidebar();
+      }
+    };
+
+    onMounted(() => {
+      window.addEventListener('click', handleOutsideClick);
+    });
+
+    onUnmounted(() => {
+      window.removeEventListener('click', handleOutsideClick);
+    });
 
     return {
       sidebar,
-      closeSidebar: () => store.commit('closeSidebar'),
+
+      closeSidebar,
     };
   },
 };

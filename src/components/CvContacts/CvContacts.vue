@@ -1,4 +1,5 @@
-<template lang="pug"> 
+
+<template lang="pug">
 .cvContacts
   h3.cvContacts__title CONTACT ME
   .cvContacts__container
@@ -26,20 +27,31 @@
 </template>
 
 <script>
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 import phoneLogo from '@/assets/img/phone.png';
 import mailLogo from '@/assets/img/mail.png';
 import telegramLogo from '@/assets/img/telegram.png';
 import linkedinLogo from '@/assets/img/linkedin.png';
 import githubLogo from '@/assets/img/gitHub.png';
 import facebookLogo from '@/assets/img/facebook.png';
-import emailjs from '@emailjs/browser';
+
+import { useSubmitForm } from '@/store/modules/submitForm';
+
 
 export default {
   name: 'CvInfo',
   setup() {
+    const {
+      state,
+      updateName,
+      updateEmail,
+      updatePhone,
+      updateMessage,
+      sendEmail,
+    } = useSubmitForm();
+
     const contacts = ref([
-      // {
+           // {
       //   id: 1,
       //   img: phone,
       //   href: 'tel:+37477166744',
@@ -83,38 +95,41 @@ export default {
       },
     ]);
 
-    onsubmit = () => {
-      sendEmail();
-    };
+    const name = computed({
+      get: () => state.name,
+      set: (value) => updateName(value),
+    });
 
-    const name = ref('');
-    const email = ref('');
-    const phone = ref('');
-    const message = ref('');
+    const email = computed({
+      get: () => state.email,
+      set: (value) => updateEmail(value),
+    });
 
-    const sendEmail = () => {
-      const form = ref({
+    const phone = computed({
+      get: () => state.phone,
+      set: (value) => updatePhone(value),
+    });
+
+    const message = computed({
+      get: () => state.message,
+      set: (value) => updateMessage(value),
+    });
+
+    const onSubmit = async () => {
+      await sendEmail({
         name: name.value,
         email: email.value,
         phone: phone.value,
         message: message.value,
       });
-      emailjs
-        .send(
-          'service_ydp2imy',
-          'template_m7qyhgt',
-          form.value,
-          'EqfAb7ONTlBib2ewP'
-        )
-        .then(
-          (response) => {
-            return response;
-          },
-          (error) => {
-            return error;
-          }
-        );
+      
+      // Очистить поля формы после отправки
+      updateName('');
+      updateEmail('');
+      updatePhone('');
+      updateMessage('');
     };
+
     return {
       contacts,
       phoneLogo,
@@ -127,10 +142,9 @@ export default {
       email,
       phone,
       message,
-      sendEmail,
+      onSubmit,
     };
   },
 };
 </script>
-
 <style src="./_cvContacts.scss" lang="scss"></style>

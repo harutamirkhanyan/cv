@@ -25,7 +25,7 @@ import hydra from '@/assets/img/hydraFull.png';
 import visual from '@/assets/img/visual.png';
 
 export default {
-  name: 'CvNavbar',
+  name: 'CvSlider',
   components: { Carousel, Slide },
 
   setup() {
