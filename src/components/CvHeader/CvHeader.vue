@@ -3,7 +3,7 @@
   CvHeaderNav
   .cvHeader__wrapper
     .cvHeader__hello
-      CvTerminal(:phrases= 'hello', :repeatCount='1')
+      CvTerminal.cvHeader__text(:phrases= 'hello', :repeatCount='1')
     .cvHeader__title
       CvTerminal(:phrases= 'title')
     .cvHeader__btns
