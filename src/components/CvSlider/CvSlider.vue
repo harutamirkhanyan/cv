@@ -23,6 +23,8 @@ import conduit from '@/assets/img/conduit.png';
 import onlineBank from '@/assets/img/onlineBank.png';
 import hydra from '@/assets/img/hydraFull.png';
 import visual from '@/assets/img/visual.png';
+import bb from '@/assets/img/bb.png';
+
 
 export default {
   name: 'CvSlider',
@@ -56,6 +58,12 @@ export default {
         img: hydra,
         title: 'OUTDOOR',
         url: 'https://harutamirkhanyan.github.io/hydra/',
+      },
+            {
+        id: 5,
+        img: bb,
+        title: 'OUTDOOR',
+        url: 'https://harutamirkhanyan.github.io/bb/',
       },
     ]);
     return {
